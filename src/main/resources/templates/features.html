@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <title>Sprinb Boot Demo App - Servisimo</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link href="/styles/normalize.css" rel="stylesheet" />
+    <link href="/styles/style.min.css" rel="stylesheet" />
+</head>
+<body>
+    <main class="wrapper">
+      <nav class="navigation">
+        <section class="container">
+          <a class="navigation-title" href=".....">
+            DEMO Presentation XX/XX/202X
+          </a>
+  
+          <ul class="navigation-list float-right">
+  
+            <li class="navigation-item">
+              <a class="navigation-link" href="/">Return to Index</a> OR <a class="navigation-link" href="/login?logout">Log out</a>
+            </li>
+  
+          </ul>
+  
+        </section>
+      </nav>
+  
+  
+      <div class="content">
+  
+        <section class="container centered">
+          <div class="about">
+            <img src="/images/custom-header.jpg" width="100" height="50">
+            <h1><a href="https://www.simianlabs.io">simianlabs.io</a></h1>
+            <img src="/images/servisimo-logo-medium.png" width="400" height="400">
+            <h1>Features</h1>
+
+            <center>
+            <table>
+              <thead>
+                  <tr>
+                      <th> Feature</th>
+                      <th> IsActive</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr th:each="statusFeature: ${features}">
+                      <td><span th:text="${statusFeature.key}"> </span></td>
+                      <td><span th:text="${statusFeature.value}"></span></td>
+                  </tr>
+              </tbody>
+          </table>
+        </center>
+
+
+
+
+            <ul>
+  
+              <li><a href="https://github.com/simianlabs"><img src="/images/github.png" width="40" height="40"></a></li>
+              <li><a href="https://hub.docker.com/u/smonko/"><img src="/images/dockerhub.png" width="40" height="40"></a></li>
+              <li><a href="https://twitter.com/SimianLabs"><img src="/images/twitter.jpg" width="40" height="40"></a></li>
+              <li><a href="https://simianlabs.io/blog"><img src="/images/wordpress.jpg" width="40" height="40"></a></li>
+  
+            </ul>
+            <!-- Sponsored by <br><a href="https://www.posam.sk"><img src="/images/posam-logo-png-transparent.png" width="150"
+                height="100"></a> -->
+  
+          </div>
+        </section>
+  
+  
+      </div>
+  
+      <footer class="footer">
+        <section class="container">
+          Powered by <a href="https://java.net/">JAVA</a> &amp; <a href="https://www.docker.com/">Docker</a>.
+        </section>
+      </footer>
+  
+    </main>
+  
+  </body>
+</html>
