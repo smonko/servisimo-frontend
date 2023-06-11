@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:fragment="html_head(pageTitle)">
+	<title>[[${pageTitle}]]</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link href="/styles/normalize.css" rel="stylesheet" />
+    <link href="/styles/style.min.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>	
+</head>
+<body>
+	<th:block th:fragment="header">
+        <nav class="navigation">
+            <section class="container">
+              <a class="navigation-title" href=".....">
+                DEMO Presentation XX/XX/202X
+              </a>
+      
+              <ul class="navigation-list float-right">
+      
+                <li class="navigation-item">
+                  <a class="navigation-link" href="/">Return to Index</a> OR <a class="navigation-link" href="/login?logout">Log out</a>
+                </li>
+                <li class="navigation-item"></li>><span th:text="${loggedUser}"> </span></li>
+      
+              </ul>
+      
+            </section>
+          </nav>
+          
+	<div sec:authorize="isAuthenticated()" class="text-center p-3">
+		<form th:action="@{/logout}" method="post">
+			Welcome <b><span sec:authentication="name">Username</span></b>
+			&nbsp;
+			<input type="submit" value="Logout" />
+		</form>
+	</div>
+	</th:block>
+</body>
+</html>

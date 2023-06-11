@@ -17,6 +17,7 @@ public class FeatureProperties {
     @Getter @Setter private boolean canaryflag;
     @Getter @Setter private boolean reportticket;
     @Getter @Setter private boolean advancefilter;
+    @Getter @Setter private boolean cataloglist;
 
 
 }

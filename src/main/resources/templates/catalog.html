@@ -34,41 +34,57 @@
           <div class="about">
             <img th:src="@{/images/servisimo-logo-small.png}" width="100" height="50">
             <!-- <h1><a href="https://www.simianlabs.io">simianlabs.io</a></h1> -->
-            <h1>Tickets</h1>
-            <br><br><br>
+            <h1>Catalog</h1>
+            <br>
             <center>
-            <span th:if="${cataloglist}">Browse configuration <a href="/catalog"> >> CATALOG << </a></span>
-            <span th:if="${reportTicket}">Register new <a href="/registerticket"> >> TICKET << </a></span>
-            </center>
-            <br><br><br>
-
+            <h4>Severity Codes</h4>
             <table class="table">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Reporter</th>
-                        <th>Assignee</th>
-                        <th>Component</th>
-                        <th>Deadline</th>
                         <th>Severity</th>
-                        <th>Status</th>   
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="ticket : ${tickets}">
-                        <td th:text="${ticket.id}"></td>
-                        <td th:text="${ticket.reporter}"></td>
-                        <td th:text="${ticket.assignee}"></td>
-                        <td th:text="${ticket.item}"></td>
-                        <td th:text="${ticket.deadline}"></td>
-                        <td th:text="${severities.get(ticket.severity).severity}"></td>
-                        <td th:text="${statuses.get(ticket.status).status}"></td>
-                        <!-- <td th:text="${ticket.status} ${statuses.get(ticket.status)}"></td> -->
-                        <td>Details: <a th:href="@{'/ticket?id=' + ${ticket.id}}">here</a></td>
+                    <tr th:each="severity : ${severities}">
+                        <td th:text="${severity.id}"></td>
+                        <td th:text="${severity.severity}"></td>
                     </tr>
                 </tbody>
             </table>
+            <h4>Ticket Status Codes</h4>
+            <table class="table">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr th:each="status : ${statuses}">
+                      <td th:text="${status.id}"></td>
+                      <td th:text="${status.status}"></td>
+                  </tr>
+              </tbody>
+          </table>
+          <h4>Component Codes</h4>
+          <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Component Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="component : ${components}">
+                    <td th:text="${component.id}"></td>
+                    <td th:text="${component.name}"></td>
+                    <td th:text="${component.description}"></td>
+                </tr>
+            </tbody>
+        </table>
+      </center>
             <br>
             <ul>
   

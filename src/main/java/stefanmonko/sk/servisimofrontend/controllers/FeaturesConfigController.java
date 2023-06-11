@@ -21,10 +21,12 @@ public class FeaturesConfigController {
     String canaryFlag = String.valueOf(featureFlags.isCanaryflag());
     String reportTicket = String.valueOf(featureFlags.isReportticket());
     String advanceFilter = String.valueOf(featureFlags.isAdvancefilter());
+    String catalogList = String.valueOf(featureFlags.isCataloglist());
 
     map.put("canaryflag", canaryFlag);
     map.put("reportticket", reportTicket);
     map.put("advancefilter", advanceFilter);
+    map.put("cataloglist", catalogList);
 
     return map;
 

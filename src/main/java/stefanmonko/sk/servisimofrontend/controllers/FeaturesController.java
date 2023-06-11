@@ -1,13 +1,14 @@
 package stefanmonko.sk.servisimofrontend.controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import stefanmonko.sk.servisimofrontend.FeatureProperties;
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 public class FeaturesController {
@@ -22,6 +23,7 @@ public class FeaturesController {
         featuresValues.put("canaryflag", featureFlags.isCanaryflag());
         featuresValues.put("reportticket", featureFlags.isReportticket());
         featuresValues.put("advancefilter", featureFlags.isAdvancefilter());
+        featuresValues.put("cataloglist", featureFlags.isCataloglist());
 
 
         model.addAttribute("features", featuresValues);

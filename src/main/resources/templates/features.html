@@ -18,7 +18,8 @@
           <ul class="navigation-list float-right">
   
             <li class="navigation-item">
-              <a class="navigation-link" href="/">Return to Index</a> OR <a class="navigation-link" href="/login?logout">Log out</a>
+              <a class="navigation-link" href="/">Return to Index</a> OR <a class="navigation-link" href="/login?logout">Log out</a><br>
+              <b>Logged as:  </b><span th:text="${session.loggedUser}" th:unless="${session == null}">[...]</span>
             </li>
   
           </ul>

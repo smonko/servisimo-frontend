@@ -1,0 +1,99 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+logging:
+  level:
+    org.springframework: INFO
+    com.mkyong: DEBUG
+    jdbc: DEBUG
+
+security:
+  ignored: /**
+
+management:
+  server:
+    servlet:
+      context-path: /actuator
+  security:
+    enabled: false
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: true
+    info:
+      env:
+        enabled: true
+      java:
+        enabled: true
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, metrics, info, health, beans, refresh, trace
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
+
+spring:
+  security:
+    oauth2:
+      resource:
+        filter-order: 3
+      client:
+        registration:
+          github:
+            clientId: GITHUB-CLIENT-ID
+            clientSecret: GITGUB-CLIENT-SECRET
+            scope:
+              - user:email
+              - read:user
+    # ignored: /**
+  application:
+    name: servisimo-frontend
+  cloud:
+    consul:
+      enebled: true
+      host: localhost
+      port: 8500
+      discovery:
+        enebled: true
+        healthCheckPath: ${management.server.servlet.context-path}/health
+        healthCheckInterval: 15s
+        tags: env=dev
+        serviceName: dev-${spring.application.name}
+    config:
+      enabled: false
+  profiles:
+    active: dev
+  main:
+    banner-mode: log
+
+features:
+  canaryflag: true
+  reportticket: true
+  advancefilter: false
+  cataloglist: true
+
+integration:
+  viewer: "http://localhost:8089"
+  putter: "http://localhost:8087"
+  catalog: "http://localhost:8088"
+
+#custom properties
+info:
+  app:
+    name: servisimo-frontend
+    description: Spring Demo application
+  author: 
+    name: "Stefan Monko"
+    mail: "stefan@stefanmonko.sk / monkos@posam.sk"

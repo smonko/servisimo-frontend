@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head> 
     <title>Sprinb Boot Demo App - Servisimo</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -18,7 +20,8 @@
           <ul class="navigation-list float-right">
   
             <li class="navigation-item">
-              <a class="navigation-link" href="/">Return to Index</a> OR <a class="navigation-link" href="/login?logout">Log out</a>
+              <a class="navigation-link" href="/">Return to Index</a> OR <a class="navigation-link" href="/login?logout">Log out</a><br>
+              <b>Logged as:  </b><span th:text="${session.loggedUser}" th:unless="${session == null}">[...]</span>
             </li>
   
           </ul>
