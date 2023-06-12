@@ -34,74 +34,48 @@
           <div class="about">
             <img th:src="@{/images/servisimo-logo-small.png}" width="100" height="50">
             <!-- <h1><a href="https://www.simianlabs.io">simianlabs.io</a></h1> -->
-            <h1>Catalog</h1>
-            <br>
+            <h1>Tickets</h1>
+            <br><br>
             <center>
-            <h4>Severity Codes</h4>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Severity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="severity : ${severities}">
-                        <td th:text="${severity.id}"></td>
-                        <td th:text="${severity.severity}"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <h4>Ticket Status Codes</h4>
-            <table class="table">
-              <thead>
-                  <tr>
-                      <th>ID</th>
-                      <th>Status</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr th:each="status : ${statuses}">
-                      <td th:text="${status.id}"></td>
-                      <td th:text="${status.status}"></td>
-                  </tr>
-              </tbody>
-          </table>
-          <h4>Component Codes</h4>
-          <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Component Name</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="component : ${components}">
-                    <td th:text="${component.id}"></td>
-                    <td th:text="${component.name}"></td>
-                    <td th:text="${component.description}"></td>
-                </tr>
-            </tbody>
-        </table>
-        <h4>Workers</h4>
-          <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Worker Name</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="worker : ${workers}">
-                    <td th:text="${worker.id}"></td>
-                    <td th:text="${worker.name}"></td>
-                    <td th:text="${worker.email}"></td>
-                </tr>
-            </tbody>
-        </table>
-      </center>
+            <span>Browse <a href="/tickets"> >> TICKETS << </a></span>
+            </center>
+            <br><br>
+<!-- FOrmular -->
+<div align="center">
+  <h2>Register new ticket</h2>
+  <p th:text="${#temporals.format(localDate, 'yyyy-MM-dd')}"></p>
+  <form action="#" th:action="@{/register}" method="post" th:object="${ntTicket}">
+    <label>E-mail:</label>
+    <input type="text" th:field="*{reporter}" th:text="${session.loggedUser}" th:value="${session.loggedUser}" /><br/>
+    <label>E-mail:</label>
+    <input type="text" th:field="*{date}" th:text="${#temporals.format(localDate, 'yyyy-MM-dd')}" th:value="${#temporals.format(localDate, 'yyyy-MM-dd')}" /><br/>
+<br><br>
+      <label>Component:</label>
+      <select th:field="*{item}">
+          <option th:each="component : ${components}" th:value="${component.id}" th:text="${component.name}" />
+      </select>
+
+      <label>Assigne:</label>
+      <select th:field="*{assignee}">
+        <option th:each="worker : ${workers}" th:value="${worker.id}" th:text="${worker.name}" />
+    </select>
+  <br><br>
+
+      <label>Details:</label>
+      <textarea rows="5" cols="25" th:field="*{description}"></textarea>
+      <br/>
+      <label>Severity:</label>
+      <select th:field="*{severity}">
+          <option th:each="severity : ${severities}" th:value="${severity.id}" th:text="${severity.severity}" />
+      </select>
+
+      <label>Deadline:</label>
+        <input type="date" th:field="*{deadline}" id="deadline"/>
+      <br/><br><br>
+
+      <button type="submit">Register</button> <input type="reset" value="Reset" />   
+  </form>
+</div>
             <br>
             <ul>
   

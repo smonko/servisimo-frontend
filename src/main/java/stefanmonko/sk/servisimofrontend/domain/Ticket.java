@@ -2,6 +2,8 @@ package stefanmonko.sk.servisimofrontend.domain;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,8 +15,10 @@ public class Ticket {
 
     private String reporter;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date deadline;
 
     private String description;
