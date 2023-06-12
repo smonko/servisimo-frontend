@@ -1,32 +1,32 @@
 # Read Me First
-The following was discovered as part of building this project:
+The following was discovered as part of building this project:  
 
-* The original package name 'stefanmonko.sk.servisimo-frontend' is invalid and this project uses 'stefanmonko.sk.servisimofrontend' instead.
+* The original package name 'stefanmonko.sk.servisimo-frontend' is invalid and this project uses 'stefanmonko.sk.servisimofrontend' instead.  
 
 # Getting Started
 
 ### Reference Documentation
 For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.1.0/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.0/maven-plugin/reference/html/#build-image)
-* [Distributed Tracing Reference Guide](https://micrometer.io/docs/tracing)
-* [Getting Started with Distributed Tracing](https://docs.spring.io/spring-boot/docs/3.1.0/reference/html/actuator.html#actuator.micrometer-tracing.getting-started)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#web)
-* [Thymeleaf](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#web.servlet.spring-mvc.template-engines)
-* [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#actuator)
-* [Consul Discovery](https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/#spring-cloud-consul-discovery)
-* [OAuth2 Client](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#web.security.oauth2.client)
-* [Prometheus](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#actuator.metrics.export.prometheus)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#using.devtools)
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)    
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.1.0/maven-plugin/reference/html/)    
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.0/maven-plugin/reference/html/#build-image)  
+* [Distributed Tracing Reference Guide](https://micrometer.io/docs/tracing)  
+* [Getting Started with Distributed Tracing](https://docs.spring.io/spring-boot/docs/3.1.0/reference/html/actuator.html#actuator.micrometer-tracing.getting-started)  
+* [Spring Web](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#web)  
+* [Thymeleaf](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#web.servlet.spring-mvc.template-engines)  
+* [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#actuator)  
+* [Consul Discovery](https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/#spring-cloud-consul-discovery)  
+* [OAuth2 Client](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#web.security.oauth2.client)  
+* [Prometheus](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#actuator.metrics.export.prometheus)  
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.1.0/reference/htmlsingle/#using.devtools)  
 
 ### Guides
 The following guides illustrate how to use some features concretely:
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
-* [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)  
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)  
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)  
+* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)  
+* [Building a RESTful Web Service with Spring Boot Actuator](https://spring.io/guides/gs/actuator-service/)  
 
