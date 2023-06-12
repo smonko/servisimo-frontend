@@ -19,7 +19,7 @@
   
             <li class="navigation-item">
               <a class="navigation-link" href="/">Return to Index</a> OR <a class="navigation-link" href="/login?logout">Log out</a><br>
-              <b>Logged as:  </b><span th:text="${session.loggedUser}" th:unless="${session == null}">[...]</span>
+              <b>Logged as:  </b><span th:text="${loggedUser}" th:unless="${session == null}">[...]</span>
             </li>
   
           </ul>
@@ -43,12 +43,12 @@
 <!-- FOrmular -->
 <div align="center">
   <h2>Register new ticket</h2>
-  <p th:text="${#temporals.format(localDate, 'yyyy-MM-dd')}"></p>
+
   <form action="#" th:action="@{/register}" method="post" th:object="${ntTicket}">
-    <label>E-mail:</label>
-    <input type="text" th:field="*{reporter}" th:text="${session.loggedUser}" th:value="${session.loggedUser}" /><br/>
-    <label>E-mail:</label>
-    <input type="text" th:field="*{date}" th:text="${#temporals.format(localDate, 'yyyy-MM-dd')}" th:value="${#temporals.format(localDate, 'yyyy-MM-dd')}" /><br/>
+    <label>Reporter:</label>
+    <input type="text" th:field="*{reporter}" th:value="*{reporter} ?: ${loggedUser}" th:text="*{reporter} ?: ${loggedUser}" size="1" />&nbsp;&nbsp;&nbsp;
+    <label>Reported date:</label>
+    <input type="text" th:field="*{date}" th:value="*{date} ?: ${#temporals.format(localDate, 'yyyy-MM-dd')}" th:text="*{date} ?: ${#temporals.format(localDate, 'yyyy-MM-dd')}" size="1" readonly/><br/>
 <br><br>
       <label>Component:</label>
       <select th:field="*{item}">

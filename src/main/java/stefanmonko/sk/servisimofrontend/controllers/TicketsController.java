@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +34,8 @@ public class TicketsController {
     @GetMapping ("/tickets")
     public String tickets(Model model) {
 
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
         String uriViewerTicketsAll= integrationProperties.getViewer() + "/tickets";
         String uriStatuses= integrationProperties.getCatalog() + "/statuses";
         String uriSeverities= integrationProperties.getCatalog() + "/severities";
@@ -53,6 +57,7 @@ public class TicketsController {
         model.addAttribute("severities", severities);
         model.addAttribute("cataloglist", featureFlags.isCataloglist());
         model.addAttribute("reportTicket", featureFlags.isReportticket());
+        model.addAttribute("loggedUser", authentication.getName());
 
         return "tickets";
     }

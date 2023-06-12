@@ -9,8 +9,8 @@ logging:
     com.mkyong: DEBUG
     jdbc: DEBUG
 
-security:
-  ignored: /**
+# security:
+#   ignored: /**
 
 management:
   server:
