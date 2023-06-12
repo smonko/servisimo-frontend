@@ -26,6 +26,7 @@ jobs:
         max-allowed-issues: 2147483647 
         upload: true
         api-token: ${{ secrets.CODACY_TOKEN }}
+        skip-uncommitted-files-check: true
 
     # Upload the SARIF file generated in the previous step
     - name: Upload SARIF results file
