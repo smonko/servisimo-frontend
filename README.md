@@ -1,3 +1,5 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a7b6ef0424c14d1f89c34b409c8e7d5a)](https://app.codacy.com/gh/smonko/servisimo-frontend/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 # servisimo-frontend  
 
 ## servisimo-frontend (Backend + API)  
